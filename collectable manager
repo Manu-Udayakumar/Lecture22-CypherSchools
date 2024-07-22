@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class collectableManager : MonoBehaviour
+{
+    // Start is called before the first frame update
+    int childcount=0;
+    public bool allcoinsCollected = false;
+
+    void Start()
+    {
+        childcount=transform.childCount;
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(transform.childCount<childcount){
+            Debug.Log("collected");
+            childcount=transform.childCount;
+            if (childcount==0){
+                allcoinsCollected=true;
+            }
+
+        }
+        
+        
+        
+    }
+}
